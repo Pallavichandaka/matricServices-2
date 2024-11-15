@@ -7,13 +7,16 @@ const cookieParser = require("cookie-parser");
 const contactRouter = require('./src/Routes/ContactUs.routes');
 const getInTouchRouter = require('./src/Routes/getInTouch.routes');
 const campusAmbRegRouter = require('./src/Routes/campusAmbReg.routes');
-const productRegisterRouter = require('./src/Routes/ProductRegister.routes');
+const productRegisterRouter = require('./src/Routes/workShopRegister.routes');
+const adminWorksShopsRouter = require('./src/Routes/adminWorkshops.routes');
+const subscribeRouter = require('./src/Routes/subscribe.routes');
+const workShopRegisterRouter = require('./src/Routes/workShopRegister.routes');
 const app = express();
 
 app.use(express.json())
 
 const corsOptions = {
-    origin: "https://rotaract-chi.vercel.app", 
+    origin: "https://www.matricservices.in", 
     methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
     allowedHeaders: ['Content-Type'],
     credentials: true, 
@@ -25,8 +28,10 @@ app.use(cors(corsOptions));
 
 
 app.use("/api/adminProduct", adminEventRouter)
+app.use("/api/subscribe", subscribeRouter)
+app.use("/api/adminWorkShop", adminWorksShopsRouter)
 app.use("/api/admin/users", userRouter)
-app.use("/api/productRegister", productRegisterRouter)
+app.use("/api/workShopRegister", workShopRegisterRouter)
 app.use("/api/contactUs", contactRouter)
 app.use("/api/getInTouch", getInTouchRouter)
 app.use("/api/campusAmbReg", campusAmbRegRouter)

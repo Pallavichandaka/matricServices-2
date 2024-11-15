@@ -1,10 +1,10 @@
-const productRegisterJoinModal = require("../Models/ProductRegister.model");
+const workShopModel = require("../Models/workShopRegister.model");
 
 
-const productRegisterController = {
+const workShopRegisterController = {
     getData:async(req,res)=>{
         try {
-            const data  = await productRegisterJoinModal.find().populate("eventId").sort({ createdAt: -1 })
+            const data  = await workShopModel.find().populate("eventId").sort({ createdAt: -1 })
             return res.status(200).send({message:"getData success", data})
         } catch (error) {
             return res.status(500).send({message:"error", error})
@@ -13,7 +13,7 @@ const productRegisterController = {
 
     postData:async(req,res)=>{
         try {
-            const data  = await productRegisterJoinModal.create(req.body)
+            const data  = await workShopModel.create(req.body)
             return res.status(200).send({message:"post success", data})
         } catch (error) {
             return res.status(500).send({message:"error", error})
@@ -22,7 +22,7 @@ const productRegisterController = {
 
     singleData:async(req,res)=>{
         try {
-            const data  = await productRegisterJoinModal.findById(req.params.id).populate("eventId")
+            const data  = await workShopModel.findById(req.params.id).populate("eventId")
             return res.status(200).send({message:"SingleData success", data})
         } catch (error) {
             return res.status(500).send({message:"error", error})
@@ -31,7 +31,7 @@ const productRegisterController = {
 
     editData:async(req,res)=>{
         try {
-            const data  = await productRegisterJoinModal.findByIdAndUpdate(req.params.id, req.body, {new:true})
+            const data  = await workShopModel.findByIdAndUpdate(req.params.id, req.body, {new:true})
             return res.status(200).send({message:"Edit data success", data})
         } catch (error) {
             return res.status(500).send({message:"error", error})
@@ -40,7 +40,7 @@ const productRegisterController = {
 
     deleteData:async(req,res)=>{
         try {
-            const data  = await productRegisterJoinModal.findByIdAndDelete(req.params.id)
+            const data  = await workShopModel.findByIdAndDelete(req.params.id)
             return res.status(200).send({message:"Deleted success", data})
         } catch (error) {
             return res.status(500).send({message:"error", error})
@@ -49,4 +49,4 @@ const productRegisterController = {
 }
 
 
-module.exports = productRegisterController;
+module.exports = workShopRegisterController;
