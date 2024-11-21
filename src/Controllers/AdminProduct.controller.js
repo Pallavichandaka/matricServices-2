@@ -43,7 +43,7 @@ const adminProductController = {
                 desc:req.body.desc,
                 price:req.body.price, 
                 productCode:req.body.productCode,
-                quantity:req.body.quantity,
+                // quantity:req.body.quantity,
                 img:imageUrls,
             })
 

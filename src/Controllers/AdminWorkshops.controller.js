@@ -17,8 +17,9 @@ const adminWorkShopController = {
         try {
 
             const images = req.files; 
+            console.log(images)
             const imageUrls = [];
-        
+            
             for (const image of images) {
               const filePath = image.path;
               const fileName = image.filename;
@@ -52,6 +53,7 @@ const adminWorkShopController = {
 
             return res.status(200).send({message:"post success", data})
         } catch (error) {
+           console.log(error)
             return res.status(500).send({message:"error", error})
         }
     },
@@ -61,6 +63,7 @@ const adminWorkShopController = {
             const data  = await adminWorkShops.findById(req.params.id)
             return res.status(200).send({message:"SingleData success", data})
         } catch (error) {
+            
             return res.status(500).send({message:"error", error})
         }
     },
@@ -70,6 +73,7 @@ const adminWorkShopController = {
             const data  = await adminWorkShops.findByIdAndUpdate(req.params.id, req.body, {new:true})
             return res.status(200).send({message:"Edit data success", data})
         } catch (error) {
+            
             return res.status(500).send({message:"error", error})
         }
     },
