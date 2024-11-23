@@ -6,7 +6,7 @@ const fs = require('fs');
 const adminWorkShopController = {
     getData:async(req,res)=>{
         try {
-            const data  = await adminWorkShops.find();
+            const data  = await adminWorkShops.find().sort({ createdAt: -1 });
             return res.status(200).send({message:"getData success", data})
         } catch (error) {
             return res.status(500).send({message:"error", error})
