@@ -63,6 +63,7 @@ const adminProductController = {
     },
 
     editData:async(req,res)=>{
+        console.log(req.body)
         try {
             const data  = await adminProduct.findByIdAndUpdate(req.params.id, req.body, {new:true})
             return res.status(200).send({message:"Edit data success", data})

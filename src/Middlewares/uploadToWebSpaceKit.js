@@ -4,9 +4,9 @@ const fs = require('fs');
 const ImageKit = require('imagekit');
 
 const imagekit = new ImageKit({
-  publicKey: "public_HGPisEZQaeZhmR4Hv76Pa7K0sYE=",
-  privateKey: "private_7h+cLLaxqHcvI1jNBG41y56qswI=",
-  urlEndpoint: "https://ik.imagekit.io/vuhq91y6c",
+  publicKey: "public_RQ3U9HM+dio+OgIRL+pKHH4kOS4=",
+  privateKey: "private_lr5FuH7+AwQy+6TnbISudKd+ABs=",
+  urlEndpoint: "https://ik.imagekit.io/ew9pn94qw",
 });
 
 const uploadToWebSpaceKit = (filePath, fileName, callback) => {
