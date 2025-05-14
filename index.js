@@ -16,7 +16,7 @@ const app = express();
 app.use(express.json())
 
 const corsOptions = {
-    origin: "https://matricservices.netlify.app/", 
+    origin: "https://froentend-ms.netlify.app/", 
     // origin:"http://localhost:3000",
     methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
     allowedHeaders: ['Content-Type'],
